@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Courgette&family=Kanit:ital,wght@0,300;0,400;1,300;1,400&family=Rubik&family=Zen+Dots&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu-ul">
+                <li class="menu-li"><a class="active" href="/index.html">INICIO</a></li>
+                <li class="menu-li"><a href="https://www.zegelipae.edu.pe/">CONTACTO</a></li>
+                <li class="menu-li"><a href="https://www.zegelipae.edu.pe/">PRECIO DE COMPUTADORAS</a></li>
+              </ul>
+        </nav>
+        <img src="/img/submenu.jpg" alt="">
+    </header>
+
+<main>
+        <form action="">
+            <fieldset>
+                <h1>Aqui podras elegir los componentes que pueda</h1><br>
+                    <label for="producto1">MotherBoard:</label>
+                
+                    <select id="producto1" name="producto1">
+                        <option value="0">Selecciona una opción</option>
+                        <option value="100">ASUS MB AS Z590 WF GUNDAM EDITION ($100)</option>
+                        <option value="200">GIGABYTE MB GB Z490 AORUS XTREME SVL D4 ($200)</option>
+                        <option value="300">GIGABYTE MB GB B660 AORUS MASTER DDR4($300)</option>
+                    </select>
+                    <br>
+    <!-- Segundo dropdown list de productos -->
+    <label for="producto2">Procesador:</label>
+    <select id="producto2" name="producto2">
+        <option value="0">Selecciona una opción</option>
+        <option value="170">Procesadores AMD Ryzen™ Threadripper™ PRO ($170)</option>
+        <option value="100">Procesadores AMD Ryzen™ PRO ($100)</option>
+        <option value="150">Procesadores Intel® Core™ i5 ($150)</option>
+        <option value="200">Procesadores Intel® Core™ i3 ($200)</option>
+    </select>
+    <br>
+    <!-- Tercero dropdown list de productos -->
+    <label for="producto3">Memoria RAM:</label>
+    <select id="producto3" name="producto3">
+        <option value="0">Selecciona una opción</option>
+        <option value="20">Memoria Kingston FURY™ Beast DDR4 RGB Special Edition ($20)</option>
+        <option value="30">Kingston FURY Renegade DDR5 RGB Memoria ($30)</option>
+        <option value="50">Kingston FURY Impact DDR3 Memoria ($50)</option>
+    </select>
+    <br>
+    <!-- Cuarta dropdown list de productos -->
+    <label for="producto4">Disco Duro:</label>
+    <select id="producto4" name="producto4">
+        <option value="0">Selecciona una opción</option>
+        <option value="15">Kingston FURY Impact DDR3 Memoria ($15)</option>
+        <option value="20">Disco Duro Externo Kingston XS2000, 500GB, usb tipo C, IP55, Gen 2x2 ($20)</option>
+        <option value="25">Disco duro externo Toshiba Canvio Advance 4TB, USB 3.2, negro ($25)</option>
+    </select>
+    <br>
+    <!-- Sexta dropdown list de productos -->
+    <label for="producto6">Ventilador CPU:</label>
+    <select id="producto6" name="producto6">
+        <option value="0">Selecciona una opción</option>
+        <option value="13">Cooler Cpu Cooler Master Hyper 212 Led Spectrum 1151 Am4 ($13)</option>
+        <option value="15">Fan Aerocool Mirage 12 Argb Pro Fans X5, Hub, Control Remoto ($15)</option>
+        <option value="20">Kit Cooler Master Sickleflow 120 Argb 3 En 1 ControL ($20)</option>
+    </select>
+    <br>
+    <!-- Octvao dropdown list de productos -->
+    <label for="producto8">Fuente Alimentación:</label>
+    <select id="producto8" name="producto8">
+        <option value="0">Selecciona una opción</option>
+        <option value="5">EVGA Fuente de alimentación 100-W1-0600-K1 certificada 600W 80 Plus ($5)</option>
+        <option value="10">EVGA 600 BR, 80+ bronce 600W, 3 años de garantía, fuente de alimentación 100- BR-0600-K1 ($10)</option>
+        <option value="15">BALAM RUSH 850W 80 Plus Gold Full Modular Fuente de alimentación ($15)</option>
+    </select>
+    <br>
+    <!-- Noveno dropdown list de productos -->
+    <label for="producto9">Tarjeta Gráfica:</label>
+    <select id="producto9" name="producto9">
+        <option value="0">Selecciona una opción</option>
+        <option value="20">MSI GEFORCE GTX 1050 Ti 4GB GDDR5 128BITS OC (PN:912-V809-2272) ($20)</option>
+        <option value="30">MSI GEFORCE GTX 1050 Ti 4GB GDDR5 128BITS TWIN FROZR GAMING X (PN:912-V335-001) ($30)</option>
+        <option value="40">PNY NVIDIA QUADRO RTX A2000 6GB DDR6 192BITS (PN:VCNRTXA2000-PB) ($40)</option>
+    </select>
+    <br>
+    <label for="total">Total:</label>
+    <input type="text" id="total" name="total" value="$0" readonly>
+<script>
+    // Obtener los elementos select y input
+        const producto1 = document.getElementById('producto1');
+        const producto2 = document.getElementById('producto2');
+        const producto3 = document.getElementById('producto3');
+        const producto4 = document.getElementById('producto4');
+        const producto6 = document.getElementById('producto6');
+        const producto8 = document.getElementById('producto8');
+        const producto9 = document.getElementById('producto9');
+        const total = document.getElementById('total');
+
+        // Agregar un evento change a cada uno de los elementos select
+        producto1.addEventListener('change', calcularTotal);
+        producto2.addEventListener('change', calcularTotal);
+        producto3.addEventListener('change', calcularTotal);
+        producto4.addEventListener('change', calcularTotal);
+        producto6.addEventListener('change', calcularTotal);
+        producto8.addEventListener('change', calcularTotal);
+        producto9.addEventListener('change', calcularTotal);
+
+        // Función para calcular el total
+        function calcularTotal() {
+        const precio1 = parseInt(producto1.value);
+        const precio2 = parseInt(producto2.value);
+        const precio3 = parseInt(producto3.value);
+        const precio4 = parseInt(producto4.value);
+        const precio6 = parseInt(producto6.value);
+        const precio8 = parseInt(producto8.value);
+        const precio9 = parseInt(producto9.value);
+        const suma = precio1 + precio2 + precio3 + precio4 + precio6 + precio8 + precio9;
+
+        // Actualizar el valor del elemento input
+        total.value = `$${suma}`;
+        }
+        </script>
+        </fieldset>
+        </form>
+        </main>
+        <br>
+        <footer>
+            <div class="menu-footer">
+                <div>
+                <p class="submenu-footer">PERIFERICOS</p>
+                <br>
+                <ul>
+                    <li class="li-footer">MOUSE</li><br>
+                    <li class="li-footer">TECLADO</li><br>
+                    <li class="li-footer">AUDIFONOS</li><br>    
+                    <li class="li-footer">PACK MOUSE</li><br>
+                    <li class="li-footer">MICROFONO GAMER</li>
+                </div>
+                <div>
+                    <p class="submenu-footer">LAPTOPS</p>
+                    <br>
+                    <ul>
+                        <li class="li-footer">Laptop 1</li><br>
+                        <li class="li-footer">Laptop 2</li><br>
+                        <li class="li-footer">Laptop 3</li><br>
+                        <li class="li-footer">Laptop 4</li><br>
+                        <li class="li-footer">Laptop 5</li><br>
+                    </div>
+                    <div>
+                        <p class="submenu-footer">TABLETS</p>
+                        <br>
+                        <ul>
+                            <li class="li-footer">Tablet</li><br>
+                            <li class="li-footer">Tablet2</li><br>
+                            <li class="li-footer">Tablet3</li><br>
+                            <li class="li-footer">Tablet4</li><br>
+                            <li class="li-footer">Tablet5</li><br>
+                        </div>
+                        <div>
+                            <p class="submenu-footer">Switch</p>
+                            <br>
+                            <ul>
+                                <li class="li-footer">Switch1</li><br>
+                                <li class="li-footer">Switch2</li><br>
+                                <li class="li-footer">Switch3</li><br>
+                                <li class="li-footer">Switch4</li><br>
+                                <li class="li-footer">Switch5</li><br>
+                            </div>
+                            <div>
+                                <p class="submenu-footer">Play Station</p>
+                                <br>
+                                <ul>
+                                    <li class="li-footer">Consola PlayStation Version 1 </li><br>
+                                    <li class="li-footer">Consola PlayStation 2</li><br>
+                                    <li class="li-footer">Consola PlayStation 3</li><br>
+                                    <li class="li-footer">Consola PlayStation 4</li><br>
+                                    <li class="li-footer">Consola PlayStation 5</li>
+                                </div>
+                
+                </ul>
+            </div>
+        </footer>
+
+        </body>
+
+</html>
